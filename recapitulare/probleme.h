@@ -137,3 +137,39 @@ void ex4poza() {
 
 	cout << "cifra maxima = " << max << ", cifra minima = " << min << endl;
 }
+
+
+
+
+//n!=0           cif      min     max     n
+//4251!=0 da      1        9       -1     425
+//425!=0 da       5        9       -1     42
+//42!=0 da        2        2        2     4
+// 4!=0 da        4        2        4     0
+
+void ex5poza() {
+	int n = 4251;
+	int min = 9;
+	int max = -1;
+
+	while (n != 0) {
+		int cif = n % 10;
+		if (min > cif && cif % 2 == 0) {
+			min = cif;
+		}
+		if (max < cif && cif % 2 == 0) {
+			max = cif;
+		}
+		n = n / 10;
+	}
+   
+	if (min == 9 && max == -1) {
+		cout << "Numarul nu contine nr pare" << endl;
+	}
+	else {
+		cout << "nr min par = " << min << ", nr maxim par = " << max << endl;
+	}
+
+}
+
+
