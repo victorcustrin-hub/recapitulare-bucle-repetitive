@@ -172,4 +172,28 @@ void ex5poza() {
 
 }
 
+//n!=0        cif     nou    p     n
+//2759!0=da    9       9     10    275
+//275!=0 da    5       59    100   27
+//27!=0 da     7       759   1000  2
+//2!=0 da      2       2759  10000 0
+
+
+
+void ex6poza() {
+	int n = 2759;
+	int nou = 0;
+	int p = 1;
+
+	while (n != 0) {
+		int cif = n % 10;
+		nou = cif * p + nou;
+		cout << nou << ",";
+		p = p * 10;
+		n = n / 10;
+	}
+
+
+
+}
 
