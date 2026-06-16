@@ -110,3 +110,30 @@ void ex3poza() {
 	}
 
 }
+
+//n!=0       cif     min       max     n
+//40285 da    5       5         5      4028
+//4028 da     8       5         8      402
+//402 da      2       2         8      40
+//40  da      0       0        
+
+
+
+void ex4poza() {
+	int n = 40285;
+	int max = -1;
+	int min = 9;
+
+	while (n != 0) {
+		int cif = n % 10;
+		if (min > cif) {
+			min = cif;
+		}
+		if (max < cif) {
+			max = cif;
+		}
+		n = n / 10;
+	}
+
+	cout << "cifra maxima = " << max << ", cifra minima = " << min << endl;
+}
