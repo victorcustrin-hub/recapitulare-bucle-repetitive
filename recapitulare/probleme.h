@@ -82,3 +82,31 @@ void ex2poza() {
 		cout << "n nu contine cifra x" << endl;
 	}
 }
+
+//n!=0          cif     vf(cif=ultimCif)       n
+//3333!=0 da     3      1                     333
+//333!=0  da     3      1                     33
+//33!=0 da       3      1                     3
+//3!=0 da        3      1                     0
+
+void ex3poza() {
+	int n = 2222;
+	bool vf = true;
+	int ultimCif = n % 10;
+
+	while (n != 0&&vf==true) {
+		int cif = n % 10;
+		if (cif != ultimCif) {
+			vf = false;
+		}
+		n = n / 10;
+	}
+
+	if (vf == true) {
+		cout << "cifre identice" << endl;
+	}
+	else {
+		cout << "cifre diferite" << endl;
+	}
+
+}

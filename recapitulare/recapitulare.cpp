@@ -2,6 +2,6 @@
 
 int main()
 {
-    ex2poza();
+    ex3poza();
 }
 
