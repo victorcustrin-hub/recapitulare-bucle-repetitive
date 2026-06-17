@@ -2,6 +2,7 @@
 
 int main()
 {
-	solutie4();
+	int ran = rang(321346, 4);
+	cout << ran;
 }
 

@@ -135,3 +135,42 @@ void solutie4() {
 
 	cout << "Cifra maxima a nr este " << maxim << ", iar cifra minima este " << minim << endl;
 }
+
+int maxCifPar(int n) {
+	int max = -1;
+
+	while (n != 0) {
+		int cif = n % 10;
+		if (cif % 2 == 0 && cif > max) {
+			max = cif;
+		}
+		n = n / 10;
+	}
+	return max;
+}
+
+int minCifPar(int n) {
+	int min = 10;
+
+	while (n != 0) {
+		int cif = n % 10;
+		if (cif % 2 == 0 && cif < min) {
+			min = cif;
+		}
+		n = n / 10;
+	}
+	return min;
+}
+
+
+int rang(int n, int k) {
+	int p = 1;
+
+	while (k>0){
+
+	 n= n / 10;
+		k--;
+	}
+	int cif = n % 10;
+	return cif;
+}
