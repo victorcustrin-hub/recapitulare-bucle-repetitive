@@ -6,5 +6,5 @@
   <Folder Name="/Solution Items/">
     <File Path=".gitignore" />
   </Folder>
-  <Project Path="recapitulare/recapitulare.vcxproj" />
+  <Project Path="recapitulare/recapitulare.vcxproj" Id="7e206452-e820-44e6-b0ce-007d18cdb48a" />
 </Solution>
