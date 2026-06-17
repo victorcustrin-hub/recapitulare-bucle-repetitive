@@ -73,3 +73,28 @@ void solutie2() {
 	
 	vf ? cout << "contine" : cout << "nu contine";
 }
+
+
+bool vfNrIdentice(int n) {
+	int x = n % 10;
+
+	while (n != 0) {
+		int cif = n % 10;
+		if (cif != x) {
+			return false;
+		}
+		n = n / 10;
+	}
+	return true;
+
+}
+
+void solutie3() {
+	int nr = 0;
+	cout << "nr=";
+	cin >> nr;
+	bool vf = vfNrIdentice(nr);
+
+	vf ? cout << "nr identice" : cout << "nr nu sunt identice";
+
+}
