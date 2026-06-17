@@ -130,6 +130,7 @@
     <ClCompile Include="recapitulare.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="functii.h" />
     <ClInclude Include="probleme.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-using  namespace std;
+using namespace std;
 
 // numar!=0     uc  suma numar
 // 8559!=0 da   9   9   855
@@ -194,4 +194,60 @@ void ex6poza() {
 
 
 }
+//   n!=0          uc       nou       n    
+//  2345!=0 da      5        5       234
+//  234!=0 da       4        54       23
+//   23!=0 da       3        543       2
+//    2!=0 da       2       5432       0
+void algRasturnatNumar() {
+	
 
+	int n = 2345;
+	int nou = 0;
+	while (n != 0) {
+		int uc = n % 10;
+		nou = nou * 10 + uc;
+		n = n / 10;
+
+	}
+
+	cout << nou << endl;
+
+
+}
+
+//n!=0          uc     nou      p       n
+//2345!=0 da    5       5       10     234
+//234!=0 da     4       45      100     23
+//23!=0 da      3       345     1000     2
+//2!=0 da       2       2345    10000    0
+void algParcurgereNumar() {
+
+
+	int n = 2345;
+	int nou = 0;
+	int p = 1;
+	while (n != 0) {
+		int uc = n % 10;
+		nou = uc *p + nou;
+		p = p * 10;
+		n = n / 10;
+
+	}
+
+	cout << nou << endl;
+
+
+}
+
+
+void ex7poza() {
+	int n = 2345;
+	int nou = 0;
+	int p = 1;
+
+	while (n != 0) {
+		int cif = n % 10;
+		nou=
+	}
+}

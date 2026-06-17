@@ -1,7 +1,7 @@
-#include "probleme.h"
+#include "functii.h"
 
 int main()
 {
-    ex6poza();
+	solutie2();
 }
 
