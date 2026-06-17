@@ -98,3 +98,40 @@ void solutie3() {
 	vf ? cout << "nr identice" : cout << "nr nu sunt identice";
 
 }
+
+
+int cifMax(int n) {
+	int max = -1;
+	while (n != 0) {
+		int cif = n % 10;
+		if (cif > max) {
+			max = cif;
+		}
+		n = n / 10;
+	}
+	return max;
+}
+
+int cifMin(int n) {
+	int min = 10;
+
+	while (n != 0) {
+		int cif = n % 10;
+		if (cif < min) {
+			min = cif;
+		}
+		n = n / 10;
+	}
+	return min;
+}
+
+void solutie4() {
+	int n = 0;
+	cout << "nr=";
+	cin >> n;
+	
+	int maxim = cifMax(n);
+	int minim = cifMin(n);
+
+	cout << "Cifra maxima a nr este " << maxim << ", iar cifra minima este " << minim << endl;
+}
