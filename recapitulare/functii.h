@@ -182,7 +182,7 @@ int rang(int n, int k) {
 }
 
 
-int solutie8() {
+void solutie8() {
 	int nr,k=0;
 	cout << "numar=";
 	cin >> nr;
@@ -193,6 +193,6 @@ int solutie8() {
 	
 	cout << "cifra de rang " << k << " este " << n << endl;
 
-	return 0;
+
 
 }
