@@ -162,6 +162,12 @@ int minCifPar(int n) {
 	return min;
 }
 
+//k>0       n         k   
+//4>0da     32134     3
+//3>0da     3213      2
+//2>0da      321      1
+//1>0da      32       0
+//      cif=2
 
 int rang(int n, int k) {
 	int p = 1;
@@ -173,4 +179,20 @@ int rang(int n, int k) {
 	}
 	int cif = n % 10;
 	return cif;
+}
+
+
+int solutie8() {
+	int nr,k=0;
+	cout << "numar=";
+	cin >> nr;
+	cout << "rang=";
+	cin >> k;
+
+	int n = rang(nr, k);
+	
+	cout << "cifra de rang " << k << " este " << n << endl;
+
+	return 0;
+
 }
