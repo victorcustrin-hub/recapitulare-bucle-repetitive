@@ -2,6 +2,6 @@
 
 int main()
 {
-	solutieEx3();
+	solutie5();
 }
 
