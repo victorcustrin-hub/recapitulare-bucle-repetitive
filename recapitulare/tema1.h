@@ -63,7 +63,35 @@ void solutieEx2() {
 		cout << "Produsul cifrelor pare este " << prod;
 	}
 
+}
+//n!=0       cif     ct     n
+//15732       2      1      1573
+//1573        3      2       157
+//157         7      3       15
+//15          5      4       1
+//1           1      4       0
+int cifPrime(int n) {
+	int ct = 0;
 
+	while (n != 0) {
+		int cif = n % 10;
+		if (cif == 2 || cif == 3 || cif == 5 || cif == 7) {
+			ct++;
+		}
+		n = n / 10;
+	}
+	return ct;
+	//ct nu e 4 in cazul 15732???
+}
 
+void solutieEx3() {
+	int n = 0;
+
+	cout << "nr=";
+	cin >> n;
+
+	int prim = cifPrime(n);
+
+	cout << "nr de cifre prime este " << prim;
 
 }
