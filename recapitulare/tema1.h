@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-//intrebari: 4
+//intrebari: 4,8
 
 //n!=0            cif     produs     n
  //2345!=0da      5         5        234
@@ -198,4 +198,90 @@ void solutie6() {
 	else {
 		cout << "Cea mai mare cifra impara este " << rez << endl;
 	}
+}
+
+int minImpar(int n) {
+	int min = 10;
+
+	while (n != 0) {
+		int cif = n % 10;
+		if (cif % 2 != 0 && cif < min) {
+			min = cif;
+		}
+		n = n / 10;
+	}
+	return min;
+}
+
+void solutie7() {
+	int n = 0;
+	cout << "nr=";
+	cin >> n;
+	int rez = minImpar(n);
+	if (rez == 10) {
+		cout << "Nu exista cifre impare in numarul introdus" << endl;
+	}
+	else {
+		cout << "Cea mai mica cifra impara este " << rez << endl;
+	}
+}
+//n!=0            cif      x!=0     x     cif2  cif==cif2       n
+// 12345!=0da     5          da     3234    4       nu         1234
+//                           da      323    3       nu
+//                           da      32     2       nu         
+//                           da      3      3       nu   
+//3234!=0 da      4          da     3234
+
+bool vfDistinctie(int n) {
+	int x = n;
+	while (n != 0) {
+		int cif = n % 10;
+		while (x != 0) {
+			x = x / 10;
+			int cif2 = x % 10;
+			if (cif == cif2) {
+				return false;
+			}
+		}
+		x = n;
+		n = n / 10;
+	}
+
+	return true;
+}
+
+void solutie8() {
+	int n = 0;
+	cout << "nr=";
+	cin >> n;
+
+	int rez = vfDistinctie(n);
+
+	rez ? cout<<"Toate cifrele sunt distincte" : cout << "Exista cifre identice in numar.";
+}
+
+int constr(int n) {
+	int nou = 0;
+	int p = 1;
+
+	while (n != 0) {
+		int cif = n % 10;
+		if (cif % 2 == 0) {
+			nou = p * cif + nou;
+			p = p * 10;
+		}
+		
+		n = n / 10;
+	}
+	return nou;
+}
+
+void solutie9() {
+	int n = 0;
+	cout << "nr=";
+	cin >> n;
+	int nou = constr(n);
+
+	cout << "Numarul format doar din cifrele pare este " << nou << endl;
+
 }
