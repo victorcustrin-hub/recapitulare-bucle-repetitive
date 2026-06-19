@@ -171,3 +171,31 @@ void solutie5() {
 
 
 }
+
+int maxImpar(int n) {
+	int x = -1;
+
+	while (n != 0) {
+		int cif = n % 10;
+		if (cif % 2 != 0&&cif>x) {
+			x = cif;
+		}
+		n = n / 10;
+	}
+	return x;
+}
+
+void solutie6() {
+	int n = 0;
+	cout << "nr=";
+	cin >> n;
+
+	int rez = maxImpar(n);
+
+	if (rez == -1) {
+		cout << "Nu exista cifre impare in numarul introdus" << endl;
+	}
+	else {
+		cout << "Cea mai mare cifra impara este " << rez << endl;
+	}
+}
