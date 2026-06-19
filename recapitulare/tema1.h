@@ -260,7 +260,13 @@ void solutie8() {
 	rez ? cout<<"Toate cifrele sunt distincte" : cout << "Exista cifre identice in numar.";
 }
 
-int constr(int n) {
+//n!=0     cif     nou    p     n
+//12345 da   5       0      1     1234
+//1234 da    4       4      10    123
+//123 da     3       4      10     12
+//12  da     2       24     100    1
+//1   da     1       24     100    0
+int constrPar(int n) {
 	int nou = 0;
 	int p = 1;
 
@@ -280,8 +286,39 @@ void solutie9() {
 	int n = 0;
 	cout << "nr=";
 	cin >> n;
-	int nou = constr(n);
+	int nou = constrPar(n);
 
 	cout << "Numarul format doar din cifrele pare este " << nou << endl;
+
+}
+
+//n!=0           cif        nou       p      n
+//12345!=0 da    5           5        10    1234
+//1234!=0 da     4           5        10    123
+//123!=0 da      3           35       100    12
+//12!=0 da       2           35       100    1
+//1!=0 da        1           135      1000    0
+int constrImp(int n) {
+	int nou = 0;
+	int p = 1;
+	while (n != 0) {
+		int cif = n % 10;
+		if (cif % 2 != 0) {
+			nou = p * cif + nou;
+			p = p * 10;
+		}
+		n = n / 10;
+		
+	}
+	return nou;
+}
+
+void solutie10() {
+	int n = 0;
+	cout << "nr=";
+	cin >> n;
+	int nou = constrImp(n);
+
+	cout << "Nr format din cifrele impare este " << nou << endl;
 
 }
