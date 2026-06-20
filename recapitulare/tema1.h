@@ -348,6 +348,41 @@ void solutie11() {
 
 
 	int dublu = dubluCif(n);
-	cout << "Dublul fiecarei cifre %10= " << dublu << endl;
+	cout << "Dublul fiecarei cifre %10 = " << dublu << endl;
+
+}
+
+//c=3
+//n!=0            cif     cif!=c     nou    p     n
+//72313!=0 da     3         nu       0      1    7231
+// 7231!=0 da     1         da       1      10    723
+// 723!=0 da      3         nu       1      10     72
+// 72!=0 da       2         da       21     100    7
+// 7!=0 da        7         da       721    1000    0  
+int elimCif(int n, int c) {
+	int nou = 0;
+	int p = 1;
+
+	while (n != 0) {
+		int cif = n % 10;
+		if (cif != c) {
+			nou = cif * p + nou;
+			p = p * 10;
+		}
+		n = n / 10;
+	}
+	return nou;
+}
+
+void solutie12() {
+	int n = 0;
+	cout << "nr=";
+	cin >> n;
+	int c = 0;
+	cout << "cifra:";
+	cin >> c;
+
+	int elim = elimCif(n,c);
+	cout << "Nr introdus fara cifra "<<c<<" este " << elim << endl;
 
 }
