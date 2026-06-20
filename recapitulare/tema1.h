@@ -379,10 +379,46 @@ void solutie12() {
 	cout << "nr=";
 	cin >> n;
 	int c = 0;
-	cout << "cifra:";
+	cout << "cifra=";
 	cin >> c;
 
 	int elim = elimCif(n,c);
 	cout << "Nr introdus fara cifra "<<c<<" este " << elim << endl;
+
+}
+
+int inlocuireCif(int n, int c1, int c2) {
+	int nou = 0;
+	int p = 1;
+
+	while (n != 0) {
+		int cif = n % 10;
+		if (cif == c1) {
+			nou = c2 * p + nou;
+			
+		}
+		else {
+			nou = cif * p + nou;
+		}
+		p = p * 10;
+		n = n / 10;
+	}
+	return nou;
+}
+
+void solutie13() {
+	int n = 0;
+	cout << "nr=";
+	cin >> n;
+	int c1 = 0;
+	cout << "cifra 1=";
+	cin >> c1;
+	int c2 = 0;
+	cout << "cifra 2=";
+	cin >> c2;
+
+
+	int x = inlocuireCif(n, c1,c2);
+	cout << "Inlocuind cifra 1 cu cifra 2 in nr, noul numar = " << x << endl;
 
 }
