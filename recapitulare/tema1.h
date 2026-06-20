@@ -322,3 +322,32 @@ void solutie10() {
 	cout << "Nr format din cifrele impare este " << nou << endl;
 
 }
+
+//n!=0          cif      nou      p       n
+//2347!=0 da    7        4        10      234
+//234!=0 da     4        84       100     23
+//23!=0 da      3        684      1000     2
+//2!=0 da       2        4684     10000    0
+int dubluCif(int n) {
+	int nou = 0;
+	int p = 1;
+
+	while (n != 0) {
+		int cif = n % 10;
+		nou = cif * 2 % 10 * p + nou;
+		p = p * 10;
+		n = n / 10;
+	}
+	return nou;
+}
+
+void solutie11() {
+	int n = 0;
+	cout << "nr=";
+	cin >> n;
+
+
+	int dublu = dubluCif(n);
+	cout << "Dublul fiecarei cifre %10= " << dublu << endl;
+
+}
