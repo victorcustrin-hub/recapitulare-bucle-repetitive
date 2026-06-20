@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-//intrebari: 4,8
+//intrebari: 4,8,14
 
 //n!=0            cif     produs     n
  //2345!=0da      5         5        234
@@ -387,6 +387,13 @@ void solutie12() {
 
 }
 
+//c1=7, c2=3
+//n!=0           cif    cif=c1     nou      p     n
+//72717!=0 da     7       da        3       10    7271
+//7271!=0 da      1       nu        13      100    727
+//727!=0 da       7       da        313     1000    72
+//72!=0 da        2       nu        2313    10000    7
+//7!=0 da         1       da        32313   100000   0
 int inlocuireCif(int n, int c1, int c2) {
 	int nou = 0;
 	int p = 1;
@@ -411,14 +418,92 @@ void solutie13() {
 	cout << "nr=";
 	cin >> n;
 	int c1 = 0;
-	cout << "cifra 1=";
+	cout << "cifra 1 =";
 	cin >> c1;
 	int c2 = 0;
-	cout << "cifra 2=";
+	cout << "cifra 2 =";
 	cin >> c2;
 
 
 	int x = inlocuireCif(n, c1,c2);
 	cout << "Inlocuind cifra 1 cu cifra 2 in nr, noul numar = " << x << endl;
+
+}
+
+
+//n!=0      cif    cif2   cif!=cif2+1        n
+//2345      5      4          nu            234
+//234       3      2          nu            23
+//23        2      1          ny             2
+//2         2      0          
+
+bool consecutiv(int n) {
+	int p = 1;
+	int cifAnterior = -1;
+
+	while (p <= n / 10) {
+		p = p * 10;
+	}
+	
+	while (p != 0) {
+		int cif = n / p; 
+		if (cifAnterior != -1) {
+			if (cif != cifAnterior + 1) {
+				return false;
+			}
+		}
+		cifAnterior = cif;
+		n = n % p;
+		p = p / 10;
+	}
+	return true;
+}
+
+void solutie14() {
+	int n = 0;
+	cout << "nr=";
+	cin >> n;
+
+
+	int consec = consecutiv(n);
+	consec ? cout << "DA" : cout << "NU";
+
+}
+// p<=n/10        p         
+// 1<=234 da      10
+// 10<=234 da     100
+// 100<=234 da    1000
+
+//p!=0           cif     k==1   k     n    p
+//1000!=0 da     2       nu    2    345   100
+//100!=0 da      3       nu    1     34   10
+
+int deterCifra(int n, int k) {
+	int p = 1;
+	while (p <= n / 10) {
+		p = p * 10;
+	}
+
+	while (p != 0) {
+		int cif = n / p;
+		if (k == 1) {
+			return cif;
+		}
+		k--;
+		n = n % p;
+		p = p / 10;
+	}
+}
+
+void solutie16() {
+	int n = 0;
+	cout << "nr=";
+	cin >> n;
+	int k = 0;
+	cout << "k=";
+	cin >> k;
+
+	int x = deterCifra(n, k);
+	cout << "Cifra pe pozitia " << k << " este " << x;
 
 }

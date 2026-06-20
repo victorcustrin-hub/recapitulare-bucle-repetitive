@@ -240,14 +240,30 @@ void algParcurgereNumar() {
 
 }
 
+// p<=n/10        p         
+// 1<=234 da      10
+// 10<=234 da     100
+// 100<=234 da    1000
+
+//p!=0           cif      n       p
+//1000!=0 da      2       345    100
+//100!=0 da       3       45      10
+//10!=0 da        4        5       1
+//1!=0 da         5        0      0
 
 void ex7poza() {
 	int n = 2345;
-	int nou = 0;
 	int p = 1;
 
-	while (n != 0) {
-		int cif = n % 10;
-		nou=
+	while (p <= n/10) {
+		p = p * 10;
 	}
+
+	while (p !=0) {
+		int cif = n / p;
+		cout << cif << ",";
+		n = n % p;
+		p=p / 10;
+	}
+
 }
