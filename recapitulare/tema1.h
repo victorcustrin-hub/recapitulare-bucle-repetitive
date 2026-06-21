@@ -603,3 +603,46 @@ void solutie20() {
 	cout << "Ambele nr la un loc=" << con << endl;
 
 }
+
+
+int ctCif(int n) {
+	int ct = 0;
+	int cifra = 0;
+
+	while (cifra<=9) {
+		int copie = n;
+		int ct2 = 0;
+
+		while (copie > 0) {
+			int cif = copie % 10;
+			if (cif == cifra) {
+				ct2++;
+			}
+			copie = copie / 10;
+		}
+
+		if (ct2 >= 2) {
+			ct++;
+		}
+
+		cifra++;
+
+
+	}
+	return ct;
+}
+
+void solutie21() {
+	int n = 0;
+	cout << "nr=";
+	cin >> n;
+	int ct = ctCif(n);
+
+	if (ct == 1) {
+		cout << ct << " cifra apar de minim 2 ori in nr introdus" << endl;
+	}
+	else {
+		cout << ct << " cifre apar de minim 2 ori in nr introdus" << endl;
+	}
+	
+}
