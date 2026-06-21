@@ -534,3 +534,28 @@ void solutie17() {
 	cout <<"nr de cifre strict mai mari decat "<<n%10<<" este "<<ct<< endl;
 
 }
+
+int perechiParitate(int n) {
+	int ct = 0;
+	while (n >9) {
+		int cif = n % 10;
+		int cif2 = n / 10 % 10;
+
+		if (cif % 2 == cif2 % 2) {
+			ct++;
+		}
+
+		n = n / 10;
+	}
+	return ct;
+
+}
+
+void solutie18() {
+	int n = 0;
+	cout << "nr=";
+	cin >> n;
+	int ct = perechiParitate(n);
+	cout << "Exista " << ct << " perechi de cifre cu aceeasi paritate" << endl;
+
+}
