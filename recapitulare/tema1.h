@@ -646,3 +646,43 @@ void solutie21() {
 	}
 	
 }
+
+bool palindrom(int n) {
+	if (n == 0) {
+		return false;
+	}
+	int ogl = 0;
+	int copie = n;
+
+	while (n != 0) {
+		int cif = n % 10;
+		ogl = ogl*10+cif;
+		n = n / 10;
+	}
+
+	if (ogl == copie) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+void solutie22() {
+	int n = 1;
+	int ct = 1;
+	int ct2 = 0;
+	cout << "Introduceti numere, ultimul introdus va fi 0" << endl;
+	while (n != 0) {
+		cout << "Nr" << ct << "=";
+		cin >> n;
+		ct++;
+		bool vf = palindrom(n);
+		if (vf == 1) {
+			ct2++;
+		}
+
+	}
+	cout << ct2 << " dintre numerele introduse sunt palindroame" << endl;
+
+}
