@@ -512,6 +512,12 @@ void solutie16() {
 
 }
 
+
+//n!=0         cif    ct    n
+//2341!=0 da   1     0     234
+//234!=0 da    4     1      23
+//23!=0 da     3     2      2
+//2!=0 da      2     3      0
 int ctCifMin(int n) {
 	int ct = 0;
 	int x = n % 10;
@@ -535,6 +541,11 @@ void solutie17() {
 
 }
 
+  
+//n>9           cif     cif2     ct     n
+//2486>9 da     6       8       1      248
+//248>9 da      8       4       2      24
+//24>9 da       4       2       3       2
 int perechiParitate(int n) {
 	int ct = 0;
 	while (n >9) {
@@ -557,5 +568,38 @@ void solutie18() {
 	cin >> n;
 	int ct = perechiParitate(n);
 	cout << "Exista " << ct << " perechi de cifre cu aceeasi paritate" << endl;
+
+}
+
+
+
+//copie>0        p      copie 
+//345>0 da       10      34
+//34>0 da        100      3
+//3>0 da         1000     0
+//nou=12*1000+345=12345
+
+int concatenare(int a, int b) {
+	int p = 1;
+	int copie = b;
+
+	while (copie>0) {
+		p = p * 10;
+		copie = copie / 10;
+	}
+
+	int nou = a * p + b;
+	return nou;
+}
+
+void solutie20() {
+	int a = 0;
+	cout << "a=";
+	cin >> a;
+	int b = 0;
+	cout << "b=";
+	cin >> b;
+	int con = concatenare(a,b);
+	cout << "Ambele nr la un loc=" << con << endl;
 
 }
