@@ -430,12 +430,16 @@ void solutie13() {
 
 }
 
+//p<=n/10       p         
+//1<=234 da     10
+//10<=234 da    100
+// 100<=234 da  1000
 
-//n!=0      cif    cif2   cif!=cif2+1        n
-//2345      5      4          nu            234
-//234       3      2          nu            23
-//23        2      1          ny             2
-//2         2      0          
+//p!=0           cif     cifAnt!=-1       cif!=cifAnt+1        cifAnt        n         p 
+//1000!=0 da      2          nu               --                 2          345       100
+//100!=0 da       3          da               nu                 3           45        10
+//10!=0 da        4          da               nu                 4           5         5
+//1!=0 da         5          da               nu                 5           0         0
 
 bool consecutiv(int n) {
 	int p = 1;
@@ -472,7 +476,7 @@ void solutie14() {
 // p<=n/10        p         
 // 1<=234 da      10
 // 10<=234 da     100
-// 100<=234 da    1000
+// 100<=234 d    1000
 
 //p!=0           cif     k==1   k     n    p
 //1000!=0 da     2       nu    2    345   100
@@ -505,5 +509,28 @@ void solutie16() {
 
 	int x = deterCifra(n, k);
 	cout << "Cifra pe pozitia " << k << " este " << x;
+
+}
+
+int ctCifMin(int n) {
+	int ct = 0;
+	int x = n % 10;
+	while (n != 0) {
+		int cif = n % 10;
+		if (cif > x) {
+			ct++;
+		}
+		n = n / 10;
+	}
+	return ct;
+}
+
+void solutie17() {
+	int n = 0;
+	cout << "nr=";
+	cin >> n;
+
+	int ct = ctCifMin(n);
+	cout <<"nr de cifre strict mai mari decat "<<n%10<<" este "<<ct<< endl;
 
 }
