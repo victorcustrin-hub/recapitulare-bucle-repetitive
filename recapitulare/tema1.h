@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 //intrebari: 4,8,14
@@ -126,7 +127,7 @@ void solutieEx4() {
 	cin >> n;
 
 	double med = medieAritmetica(n);
-
+	cout << fixed << setprecision(2);
 	cout << "media aritmetica a cifrelor lui n este " << med;
 
 }
@@ -463,7 +464,7 @@ bool consecutiv(int n) {
 	return true;
 }
 
-void solutie14() {
+void solutie14x() {
 	int n = 0;
 	cout << "nr=";
 	cin >> n;
@@ -647,6 +648,12 @@ void solutie21() {
 	
 }
 
+
+//n!=0          cif    ogl    n
+//1221!=0 da    1       1     122
+//122!=o da     2       12    12
+//12!=0 da      2       122   1
+//1!=0 da       1       1221  0
 bool palindrom(int n) {
 	if (n == 0) {
 		return false;
@@ -668,6 +675,7 @@ bool palindrom(int n) {
 	}
 }
 
+
 void solutie22() {
 	int n = 1;
 	int ct = 1;
@@ -684,5 +692,86 @@ void solutie22() {
 
 	}
 	cout << ct2 << " dintre numerele introduse sunt palindroame" << endl;
+
+}
+
+//corectarea temei
+
+
+//ex8: n numar natural, verificati daca toate cifrele sunt distincte
+
+//de cate ori apare cifra x in nr introdus
+
+int vfCif(int n, int k) {
+	int ct = 0;
+
+	while (n != 0) {
+		int cif = n % 10;
+		if (cif == k) {
+			ct++;
+		}
+		n = n / 10;
+	}
+
+	return ct;
+
+}
+
+
+bool isCifreDistincte(int numar) {
+	int aux = numar;
+	while (numar!=0)
+	{
+		int cifra = numar % 10;
+		if (vfCif(aux, cifra) > 1) {
+			return false;
+		}
+		numar = numar / 10;
+
+	}
+	return true;
+}
+
+
+
+void solutie08() {
+	int nr = 0;
+	cout << "nr=";
+	cin >> nr;
+	bool cif = isCifreDistincte(nr);
+
+	cif ? cout << "Toate cifrele sunt distincte." : cout << "Exista cifre identice." << endl;
+
+}
+
+//ex14  n nr natural, verificați dacă cifrele lui n sunt consecutive ascendent
+//n!=0     cif     cif2     cif2+1!=cif    n
+//1234
+bool ascendent(int n) {
+	int cifPrecedent = n % 10;
+	n = n / 10;
+	int cif = -1;
+
+
+	while (n != 0) {
+		cif = cifPrecedent;
+		cifPrecedent = n % 10;
+		if (cifPrecedent+1 != cif) {
+			return false;
+		}
+
+		n = n / 10;
+
+	}
+	return true;
+}
+
+void solutie14() {
+	int nr = 0;
+	cout << "nr=";
+	cin >> nr;
+
+	int asc = ascendent(nr);
+	asc ? cout << "Nr sunt consecutive ascendent" : cout << "Nr nu sunt consecutive ascendent" << endl;
 
 }

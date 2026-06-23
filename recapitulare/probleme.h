@@ -7,8 +7,6 @@ using namespace std;
 //855!=0 da     5   14   85
 //85!=0 da      5   19    8
 //8!=0 da       8   27    0
-
-
 void ex1() {
 	int numar = 8559;
 	int suma = 0;
@@ -29,8 +27,6 @@ void ex1() {
 //123!=0 da      3    2      2     4
 //12!=0 da       2    3      2     5
 //1!=0 da        1    3      3 
- 
-
 void ex1poza() {
 	int n = 123456;
 	int ct = 0;
@@ -54,15 +50,11 @@ void ex1poza() {
 }
 
 
-
-
 //n!=0            cif    vf(cif=x?)    n
 //1954!=0 da       4        1         195
 //195!=0 da        5        1          19
 //19!=0 da         9        1          1
 //1!=0 da          1        1          0
-
-
 void ex2poza() {
 	int n = 1954;
 	int x = 6;
@@ -88,7 +80,6 @@ void ex2poza() {
 //333!=0  da     3      1                     33
 //33!=0 da       3      1                     3
 //3!=0 da        3      1                     0
-
 void ex3poza() {
 	int n = 2222;
 	bool vf = true;
@@ -116,9 +107,6 @@ void ex3poza() {
 //4028 da     8       5         8      402
 //402 da      2       2         8      40
 //40  da      0       0        
-
-
-
 void ex4poza() {
 	int n = 40285;
 	int max = -1;
@@ -137,9 +125,6 @@ void ex4poza() {
 
 	cout << "cifra maxima = " << max << ", cifra minima = " << min << endl;
 }
-
-
-
 
 //n!=0           cif      min     max     n
 //4251!=0 da      1        9       -1     425
@@ -239,6 +224,9 @@ void algParcurgereNumar() {
 
 
 }
+
+
+
 
 // p<=n/10        p         
 // 1<=234 da      10

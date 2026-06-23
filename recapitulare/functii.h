@@ -6,7 +6,7 @@ using namespace std;
 
 //f(x)=2x+1   f(3)=7  
 
-int   contorCifre(int n) {
+int contorCifre(int n) {
 	 
 	int ct = 0;
 	while (n != 0) {
@@ -37,7 +37,6 @@ int contorCifreImpare(int n) {
 	return contorCifre(n)-contorCifrePare(n);
 }
 
-
 void solutie1() {
 	int numar = 0;
 	cout << "numar=";
@@ -47,7 +46,6 @@ void solutie1() {
 	int totalImpare = contorCifreImpare(numar);
 	cout << " nr de cifre este "<<total<<" cu "<<totalPare<<" cifre pare si "<<totalImpare<<" cifre impare";
 }
-
 
 bool vfNumar(int n,int x) {
 	while (n != 0) {
@@ -74,7 +72,6 @@ void solutie2() {
 	vf ? cout << "contine" : cout << "nu contine";
 }
 
-
 bool vfNrIdentice(int n) {
 	int x = n % 10;
 
@@ -98,7 +95,6 @@ void solutie3() {
 	vf ? cout << "nr identice" : cout << "nr nu sunt identice";
 
 }
-
 
 int cifMax(int n) {
 	int max = -1;
@@ -168,7 +164,6 @@ int minCifPar(int n) {
 //2>0da      321      1
 //1>0da      32       0
 //      cif=2
-
 int rang(int n, int k) {
 	int p = 1;
 
@@ -180,7 +175,6 @@ int rang(int n, int k) {
 	int cif = n % 10;
 	return cif;
 }
-
 
 void solutie8() {
 	int nr,k=0;
