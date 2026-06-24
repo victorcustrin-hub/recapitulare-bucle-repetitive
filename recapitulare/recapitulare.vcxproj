@@ -132,6 +132,7 @@
   <ItemGroup>
     <ClInclude Include="functii.h" />
     <ClInclude Include="probleme.h" />
+    <ClInclude Include="problemefor.h" />
     <ClInclude Include="tema1.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

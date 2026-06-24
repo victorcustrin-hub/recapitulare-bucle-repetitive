@@ -29,5 +29,8 @@
     <ClInclude Include="tema1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="problemefor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

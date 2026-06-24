@@ -1,6 +1,7 @@
-#include "tema1.h"
+#include "problemefor.h"
 
 int main()
 {
-	solutie14();
+	int r = asociate(7);
+	cout << r;
 }

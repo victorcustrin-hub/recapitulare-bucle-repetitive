@@ -775,3 +775,28 @@ void solutie14() {
 	asc ? cout << "Nr sunt consecutive ascendent" : cout << "Nr nu sunt consecutive ascendent" << endl;
 
 }
+
+
+//ex19:a si b nr nat. verificati daca a si b sunt anagrame(au aceleasi cifre)
+
+
+bool verificaCifreDinAsiInB(int a, int b) {
+	
+
+	while (a != 0) {
+		int cifra = a % 10;
+		if (vfCif(b, cifra) == 0) {
+			return false;
+		}
+		a = a / 10;
+	}
+
+	return true;
+}
+
+
+bool isAnagrame(int a, int b) {
+
+	return verificaCifreDinAsiInB(a, b) && verificaCifreDinAsiInB(b, a);
+}
+
